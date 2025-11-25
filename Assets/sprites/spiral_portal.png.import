@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bygsgkwj3bx4f"
-path="res://.godot/imported/twirl_02BB.png-7e8877fdd29c33b750182ffc23d1a213.ctex"
+uid="uid://dattvdt6p3s3h"
+path="res://.godot/imported/spiral_portal.png-130b3be86488c2c51ed6bc4c80d8010f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/twirl_02BB.png"
-dest_files=["res://.godot/imported/twirl_02BB.png-7e8877fdd29c33b750182ffc23d1a213.ctex"]
+source_file="res://Assets/sprites/spiral_portal.png"
+dest_files=["res://.godot/imported/spiral_portal.png-130b3be86488c2c51ed6bc4c80d8010f.ctex"]
 
 [params]
 

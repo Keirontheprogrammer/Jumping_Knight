@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl7ytsovxf84h"]
+
+[ext_resource type="Script" uid="uid://dy8irjscvwd8m" path="res://scripts/portal.gd" id="1_v0xau"]
+
+[node name="next" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_v0xau")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

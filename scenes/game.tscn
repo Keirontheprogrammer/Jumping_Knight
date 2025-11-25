@@ -1,10 +1,12 @@
-[gd_scene load_steps=17 format=4 uid="uid://c05w8jr1omk7j"]
+[gd_scene load_steps=20 format=4 uid="uid://c05w8jr1omk7j"]
 
 [ext_resource type="PackedScene" uid="uid://cg40ygidb5xb0" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://cql4ysg8jlodp" path="res://Assets/sprites/world_tileset.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://bai855dphax53" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bchdbsl4tryeo" path="res://scenes/coin.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://ck4oh1vnakgcj" path="res://scenes/kill_zone.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://dl7ytsovxf84h" path="res://scenes/portal.tscn" id="6_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://dattvdt6p3s3h" path="res://Assets/sprites/spiral_portal.png" id="7_gee14"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
 texture = ExtResource("2_yqjtg")
@@ -384,6 +386,8 @@ _data = {
 &"move": SubResource("Animation_iywne")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_p57ef"]
+
 [node name="Game" type="Node2D"]
 
 [node name="background" type="TileMapLayer" parent="."]
@@ -490,3 +494,16 @@ libraries = {
 &"": SubResource("AnimationLibrary_u5sy4")
 }
 autoplay = "move"
+
+[node name="next" parent="." instance=ExtResource("6_u5sy4")]
+position = Vector2(654, -18)
+
+[node name="Sprite2D" type="Sprite2D" parent="next"]
+position = Vector2(2, 0)
+scale = Vector2(0.16406253, 0.17187499)
+texture = ExtResource("7_gee14")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="next"]
+position = Vector2(3, 0)
+shape = SubResource("CircleShape2D_p57ef")
+debug_color = Color(0.6754723, 0.50497913, 0.110240825, 0.41960785)
