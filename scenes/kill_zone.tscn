@@ -1,6 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://ck4oh1vnakgcj"]
+[gd_scene load_steps=6 format=3 uid="uid://ck4oh1vnakgcj"]
 
 [ext_resource type="Script" uid="uid://73qwye0y35vu" path="res://scripts/kill_zone.gd" id="1_kebdr"]
+[ext_resource type="AudioStream" uid="uid://drlm14x80j3xy" path="res://Assets/sounds/hurt.wav" id="2_l4ff3"]
+
+[sub_resource type="Animation" id="Animation_koymq"]
+resource_name = "hurt"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_a50cx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c8kom"]
+_data = {
+&"RESET": SubResource("Animation_a50cx"),
+&"hurt": SubResource("Animation_koymq")
+}
 
 [node name="Kill_zone" type="Area2D"]
 collision_mask = 2
@@ -9,6 +46,15 @@ script = ExtResource("1_kebdr")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.6
 one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_l4ff3")
+bus = &"sfxx"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_c8kom")
+}
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdsjvpaghovu2"]
+
+[ext_resource type="AudioStream" uid="uid://cvmfwicl54dod" path="res://Assets/music/medieval-opener-270568.mp3" id="1_1udxr"]
+
+[node name="music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_1udxr")
+autoplay = true
+bus = &"Music"
