@@ -1,17 +1,28 @@
 extends Area2D
 
 @onready var timer: Timer = $Timer
- 
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
 
 func _on_body_entered(body: Node2D) -> void:
-	print("DEATH comes in Three");
-	Engine.time_scale = 0.3;
-	
-	var collision= body.get_node("CollisionShape2D");
-	collision.queue_free();  
-	timer.start();
-	
+	print("DEATH comes in Three")
+
+	# Check if the body is the player
+	if body is CharacterBody2D:
+		
+		var player := body as CharacterBody2D
+		
+		player.play_death_animation()
+
+		Engine.time_scale = 0.3
+
+		# Remove player's collision
+		var collision = player.get_node("CollisionShape2D")
+		collision.queue_free()
+
+		timer.start()
+		
+
 func _on_timer_timeout() -> void:
-	Engine.time_scale = 1;
-	get_tree().reload_current_scene();
-	
+	Engine.time_scale = 1
+	get_tree().reload_current_scene()

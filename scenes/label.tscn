@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://rqmad5bwaeml"]
+
+[node name="Label" type="Label"]
+offset_left = 547.0
+offset_top = -91.0
+offset_right = 657.0
+offset_bottom = -55.0
+theme_override_font_sizes/font_size = 26
+text = "Score: "

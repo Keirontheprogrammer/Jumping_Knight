@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bvylynjw4j3rj"]
+[gd_scene load_steps=28 format=4 uid="uid://bvylynjw4j3rj"]
 
 [ext_resource type="Texture2D" uid="uid://cql4ysg8jlodp" path="res://Assets/sprites/world_tileset.png" id="1_b4j7a"]
 [ext_resource type="Texture2D" uid="uid://f2ec0mdqgi34" path="res://Assets/sprites/Cartoon_Forest_BG_04.png" id="1_y0kc7"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://f6evfxghcepb" path="res://scenes/platform_orange.tscn" id="5_b4j7a"]
 [ext_resource type="PackedScene" uid="uid://ck4oh1vnakgcj" path="res://scenes/kill_zone.tscn" id="7_ne2mo"]
 [ext_resource type="PackedScene" uid="uid://fs0yaotyokct" path="res://scenes/enemy.tscn" id="8_ne2mo"]
+[ext_resource type="Script" uid="uid://b3770ac7urd51" path="res://scripts/manager.gd" id="9_que50"]
+[ext_resource type="PackedScene" uid="uid://rqmad5bwaeml" path="res://scenes/label.tscn" id="10_hey2k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6cvei"]
 texture = ExtResource("1_y0kc7")
@@ -8538,3 +8540,13 @@ position = Vector2(258, 0)
 
 [node name="enemy6" parent="." instance=ExtResource("8_ne2mo")]
 position = Vector2(150, 1)
+
+[node name="manager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("9_que50")
+
+[node name="Label" parent="manager" instance=ExtResource("10_hey2k")]
+offset_left = 79.0
+offset_top = -236.0
+offset_right = 189.0
+offset_bottom = -200.0

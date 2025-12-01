@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=4 uid="uid://c05w8jr1omk7j"]
+[gd_scene load_steps=22 format=4 uid="uid://c05w8jr1omk7j"]
 
+[ext_resource type="Script" uid="uid://b3770ac7urd51" path="res://scripts/manager.gd" id="1_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://cg40ygidb5xb0" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://cql4ysg8jlodp" path="res://Assets/sprites/world_tileset.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://bai855dphax53" path="res://scenes/platform.tscn" id="3_lnu2h"]
@@ -390,6 +391,18 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_p57ef"]
 
 [node name="Game" type="Node2D"]
+
+[node name="manager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_0tnpc")
+
+[node name="Label" type="Label" parent="manager"]
+offset_left = 547.0
+offset_top = -91.0
+offset_right = 657.0
+offset_bottom = -55.0
+theme_override_font_sizes/font_size = 26
+text = "Score: "
 
 [node name="background" type="TileMapLayer" parent="."]
 position = Vector2(1, 0)
