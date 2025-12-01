@@ -424,6 +424,10 @@ zoom = Vector2(3, 3)
 limit_bottom = 194
 position_smoothing_enabled = true
 
+[node name="invisibleTimer" type="Timer" parent="player"]
+wait_time = 0.6
+one_shot = true
+
 [node name="coins" type="Node" parent="."]
 
 [node name="coin" parent="coins" instance=ExtResource("4_lbhrr")]
